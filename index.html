@@ -426,19 +426,13 @@
 
   .venue-grid-bottom {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     margin-top: 1.2rem;
   }
 
   .venue-grid-bottom .venue-item {
-    width: calc(25% - 0.9rem);
+    width: calc(33.33% - 0.8rem);
     min-width: 200px;
-  }
-
-  @media (max-width: 600px) {
-    .venue-grid-bottom .venue-item {
-      width: 100%;
-    }
   }
 
   .venue-item {
@@ -647,16 +641,42 @@
   .reveal-delay-4 { transition-delay: 0.6s; }
 
   /* ── RESPONSIVE ── */
-  @media (max-width: 600px) {
-    .story-families { flex-direction: column; align-items: center; }
-    .family-card { max-width: 100%; }
-    .events-grid { grid-template-columns: 1fr; }
-    .venue-grid { grid-template-columns: 1fr 1fr; }
-    .closing-date-banner { gap: 1rem; padding: 0.8rem 1.5rem; }
+  @media (max-width: 768px) {
+    .venue-grid-bottom { justify-content: flex-start; }
+    .venue-grid-bottom .venue-item { width: calc(50% - 0.6rem); min-width: unset; }
+    .events-grid { grid-template-columns: 1fr 1fr; }
+    .closing-date-banner { flex-direction: column; gap: 0.5rem; align-items: center; }
+    .banner-sep { display: none; }
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 600px) {
+    .story-families { flex-direction: column; align-items: center; }
+    .family-card { max-width: 100%; width: 100%; }
+    .events-grid { grid-template-columns: 1fr; }
+    .event-card { padding: 1.2rem 1rem; text-align: left; display: flex; align-items: center; gap: 1rem; }
+    .event-icon { font-size: 2rem; margin-bottom: 0; flex-shrink: 0; }
+    .event-card-accent { left: 0; top: 0; bottom: 0; right: auto; width: 3px; height: auto; }
+    .venue-grid { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+    .venue-grid-bottom { justify-content: flex-start; margin-top: 0.8rem; }
+    .venue-grid-bottom .venue-item { width: calc(50% - 0.4rem); min-width: unset; }
+    .venue-item { padding: 1.2rem 0.8rem; }
+    .venue-map-btn { font-size: 0.65rem; padding: 0.4rem 0.9rem; }
+    .section-inner { padding: 3.5rem 1.2rem; }
+    .closing-inner { padding: 4rem 1.2rem; }
+    .closing-date-banner { flex-direction: column; gap: 0.4rem; align-items: flex-start; padding: 1rem 1.5rem; }
+    .banner-sep { display: none; }
+    .banner-item { font-size: 0.72rem; }
+    .hero-tagline { font-size: 1rem; }
+    .cta-btn { padding: 0.75rem 2rem; font-size: 0.78rem; }
+    .story-body { font-size: 1rem; }
+  }
+
+  @media (max-width: 380px) {
     .venue-grid { grid-template-columns: 1fr; }
+    .venue-grid-bottom .venue-item { width: 100%; }
+    .events-grid { grid-template-columns: 1fr; }
+    .event-card { text-align: center; flex-direction: column; }
+    .event-card-accent { left: 0; top: auto; bottom: 0; right: 0; width: auto; height: 3px; }
   }
 
   /* ── CUSTOM SCROLLBAR ── */
@@ -818,7 +838,7 @@
       <div class="event-card reveal reveal-delay-1">
         <div class="event-card-accent"></div>
         <span class="event-icon">🪷</span>
-        <p class="event-date">Friday · 24 April</p>
+        <p class="event-date">Friday · 24 April · 7:00 PM Onwards</p>
         <h3 class="event-name">Mehndi</h3>
         <p class="event-venue">Home, Bhandara</p>
       </div>
@@ -826,7 +846,7 @@
       <div class="event-card reveal reveal-delay-2">
         <div class="event-card-accent"></div>
         <span class="event-icon">🌼</span>
-        <p class="event-date">Saturday · 25 April</p>
+        <p class="event-date">Saturday · 25 April · 7:00 PM Onwards</p>
         <h3 class="event-name">Haldi &amp; Sangeet</h3>
         <p class="event-venue">Jalaram Hall, Bhandara</p>
       </div>
@@ -872,15 +892,15 @@
             <circle cx="26" cy="6" r="1" fill="#E8C38A" opacity="0.7"/>
           </svg>
         </span>
-        <p class="event-date">Sunday · 26 April</p>
+        <p class="event-date">Sunday · 26 April · 6:55 PM</p>
         <h3 class="event-name">Wedding Night</h3>
-        <p class="event-venue">Kumbhali,<br/>Ta. Sakoli, Bhandara</p>
+        <p class="event-venue">ZP School, Kumbhali,<br/>Ta. Sakoli, Bhandara</p>
       </div>
 
       <div class="event-card reveal reveal-delay-4">
         <div class="event-card-accent"></div>
         <span class="event-icon">🎊</span>
-        <p class="event-date">Monday · 27 April</p>
+        <p class="event-date">Monday · 27 April · 7:00 PM Onwards</p>
         <h3 class="event-name">Reception Night</h3>
         <p class="event-venue">Lalla Celebration, Bhandara</p>
       </div>
@@ -918,7 +938,7 @@
       <div class="venue-item">
         <span class="venue-item-icon">🌾</span>
         <p class="venue-item-event">Wedding Night</p>
-        <p class="venue-item-name">Kumbhali<br/>Ta. Sakoli, Bhandara</p>
+        <p class="venue-item-name">ZP School, Kumbhali<br/>Ta. Sakoli, Bhandara</p>
         <a href="https://maps.app.goo.gl/sQz9f5XzHuisVxtr9?g_st=ac" target="_blank" class="venue-map-btn">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           Get Directions
@@ -975,13 +995,13 @@
     </p>
 
     <div class="closing-date-banner reveal reveal-delay-3">
-      <span class="banner-item">24 April — Mehndi</span>
+      <span class="banner-item">24 April — Mehndi · 7 PM</span>
       <span class="banner-sep">✦</span>
-      <span class="banner-item">25 April — Haldi & Sangeet</span>
+      <span class="banner-item">25 April — Haldi & Sangeet · 7 PM</span>
       <span class="banner-sep">✦</span>
-      <span class="banner-item">26 April — Wedding</span>
+      <span class="banner-item">26 April — Wedding · 6:55 PM</span>
       <span class="banner-sep">✦</span>
-      <span class="banner-item">27 April — Reception</span>
+      <span class="banner-item">27 April — Reception · 7 PM</span>
     </div>
 
     <br/>
